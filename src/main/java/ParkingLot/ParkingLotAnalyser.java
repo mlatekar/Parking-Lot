@@ -8,6 +8,7 @@ public class ParkingLotAnalyser {
 
     Map<vehicleType, ArrayList<vehicleInformation>> parkingList;
     ArrayList<vehicleInformation> totalDeatilOfVehicles = new ArrayList<>();
+    int sizeOfParkingLot = 5;
 
     public ParkingLotAnalyser() {
         this.parkingList = new HashMap<>();
@@ -17,32 +18,38 @@ public class ParkingLotAnalyser {
         if (information != null) {
             parkingList.put(type, totalDeatilOfVehicles);
             for (vehicleInformation i : information) {
-                parkingList.get(type).add(i);
-            }
-            return parkingList;
-        }
-        return null;
-    }
-
-    public boolean unparkTheVehicleFromParkingLot(String numberPlate) throws ParkingLotException {
-        try {
-            totalDeatilOfVehicles.size();
-            for (int i = 0; i < totalDeatilOfVehicles.size(); i++) {
-                if (totalDeatilOfVehicles.get(i).numberPlate.equals(numberPlate)) {
-                    System.out.println("Vehicle Unpark successfully" + totalDeatilOfVehicles.get(i).numberPlate);
-                    totalDeatilOfVehicles.remove(i);
-                    return true;
+                if (totalDeatilOfVehicles.size() != sizeOfParkingLot) {
+                    parkingList.get(type).add(i);
+                    int remainingSlots = 0;
+                    remainingSlots = sizeOfParkingLot - parkingList.get(type).size();
                 }
-            }return false;
-        }catch (ParkingLotException e) {
-            throw new ParkingLotException("Vehicle not found", ParkingLotException.ExceptionType.VEHICLE_NOT_FOUND);
+            }
+            System.out.println("Parking is fulled");
+                return parkingList;
+            }
+            return null;
+        }
+
+        public boolean unparkTheVehicleFromParkingLot (String numberPlate) throws ParkingLotException {
+            try {
+                totalDeatilOfVehicles.size();
+                for (int i = 0; i < totalDeatilOfVehicles.size(); i++) {
+                    if (totalDeatilOfVehicles.get(i).numberPlate.equals(numberPlate)) {
+                        System.out.println("Vehicle Unpark successfully" + totalDeatilOfVehicles.get(i).numberPlate);
+                        totalDeatilOfVehicles.remove(i);
+                        return true;
+                    }
+                }
+                return false;
+            } catch (ParkingLotException e) {
+                throw new ParkingLotException("Vehicle not found", ParkingLotException.ExceptionType.VEHICLE_NOT_FOUND);
+            }
+        }
+
+        public static void main (String[]args){
+
+            System.out.println("Welcome to Parking-Lot");
         }
     }
-
-    public static void main(String[] args) {
-
-        System.out.println("Welcome to Parking-Lot");
-    }
-}
 
 
