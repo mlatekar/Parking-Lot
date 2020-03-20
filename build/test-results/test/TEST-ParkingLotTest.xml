@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ParkingLotTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-03-20T02:17:08" hostname="LAPTOP-N41Q4R44" time="0.003">
+<testsuite name="ParkingLotTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-03-20T05:34:55" hostname="LAPTOP-N41Q4R44" time="0.026">
   <properties/>
-  <testcase name="givenParkingLot_OwnerCheck_parkingLotIs_Empty_ToParkVehicle" classname="ParkingLotTest" time="0.003"/>
+  <testcase name="givenParkingLot_OwnerCheck_parkingLotIs_Empty_ToParkVehicle" classname="ParkingLotTest" time="0.004"/>
+  <testcase name="givenParkingLot_DriverCan_UnparkThe_CarShouldReturnTrue" classname="ParkingLotTest" time="0.021"/>
   <testcase name="givenParkingLot_MultipleCar_WithMultipleTypes" classname="ParkingLotTest" time="0.0"/>
   <testcase name="givenParkingLot_MultipleCar_CanParkInParkingLot_" classname="ParkingLotTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
+  <system-out><![CDATA[Vehicle Unpark successfullyMH01 MU 0707
+truevehicle unpark
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

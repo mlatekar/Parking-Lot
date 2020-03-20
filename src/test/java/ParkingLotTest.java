@@ -44,4 +44,16 @@ public class ParkingLotTest {
         Assert.assertEquals(3,parkVehicle.get(vehicleType.HANDICAPPED).size());
 
     }
+
+    @Test
+    public void givenParkingLot_DriverCan_UnparkThe_CarShouldReturnTrue() {
+        ParkingLotAnalyser parkingLotAnalyser = new ParkingLotAnalyser();
+        Map<vehicleType, ArrayList<vehicleInformation>> parkVehicle = parkingLotAnalyser.
+                allocatePlaceToParkTheVehicle(vehicleType.SMALL, new vehicleInformation("MH05 CO 7788", "Black", "9:45"),
+                        new vehicleInformation("MH01 MU 0707", "Yellow", "10:00"),
+                        new vehicleInformation("MH02 DM 0619", "Grey", "10:05"));
+        boolean unparkVehicle = parkingLotAnalyser.unparkTheVehicleFromParkingLot("MH01 MU 0707");
+        Assert.assertTrue(unparkVehicle);
+        System.out.println(unparkVehicle+ "vehicle unpark");
+    }
 }
