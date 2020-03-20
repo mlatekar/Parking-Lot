@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ParkingLotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-19T23:43:14" hostname="LAPTOP-N41Q4R44" time="0.002">
+<testsuite name="ParkingLotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-20T01:02:28" hostname="LAPTOP-N41Q4R44" time="3.205">
   <properties/>
-  <testcase name="givenParkingLot_OwnerCheck_parkingLotIs_Empty_ToParkVehicle" classname="ParkingLotTest" time="0.002"/>
+  <testcase name="givenParkingLot_OwnerCheck_parkingLotIs_Empty_ToParkVehicle" classname="ParkingLotTest" time="3.205"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
