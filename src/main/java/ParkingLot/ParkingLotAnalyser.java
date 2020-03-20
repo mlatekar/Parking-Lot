@@ -6,16 +6,16 @@ import java.util.Map;
 
 public class ParkingLotAnalyser {
 
-    Map<String, ArrayList<vehicleInformation>> parkingList;
+    Map<vehicleType, ArrayList<vehicleInformation>> parkingList;
 
     public ParkingLotAnalyser() {
         this.parkingList = new HashMap<>();
     }
-    public Map<String,  ArrayList<vehicleInformation>> allocatePlaceToParkTheVehicle(vehicleInformation... information) {
+    public Map<vehicleType,  ArrayList<vehicleInformation>> allocatePlaceToParkTheVehicle(vehicleType type,vehicleInformation... information) {
         if (information != null) {
-            parkingList.put("vehicle",new ArrayList<vehicleInformation>(5));
+            parkingList.put(type, new ArrayList<vehicleInformation>(5));
             for (vehicleInformation i : information) {
-                parkingList.get("vehicle").add(i);
+                parkingList.get(type).add(i);
             }
             return parkingList;
         }
