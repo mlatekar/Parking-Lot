@@ -1,4 +1,5 @@
 import ParkingLot.ParkingLotAnalyser;
+import ParkingLot.ParkingLotException;
 import ParkingLot.vehicleInformation;
 import ParkingLot.vehicleType;
 import org.junit.Assert;
@@ -72,5 +73,24 @@ public class ParkingLotTest {
                         new vehicleInformation("MH12 DX 8331", "Black", "3:00"),
                         new vehicleInformation("MH02 MJ 0619", "White-Red", "5:04"));
         Assert.assertNotEquals(7,parkVehicle.get(vehicleType.SMALL).size());
+    }
+
+    @Test
+    public void givenParkingLot_AirportSecurityPersonLikeToKnow_WhenParkingLotIs_Fulled_AndReturnTrue_WhenItIsFulled() {
+        ParkingLotAnalyser parkingLotAnalyser = new ParkingLotAnalyser();
+       try {
+           Map<vehicleType, ArrayList<vehicleInformation>> parkVehicle = parkingLotAnalyser.
+                   allocatePlaceToParkTheVehicle(vehicleType.SMALL,
+                           new vehicleInformation("MH43 TY 8976", "White", "8:09"),
+                           new vehicleInformation("MH01 MU 0707", "Yellow", "10:19"),
+                           new vehicleInformation("MH05 DM 0001", "Grey", "10:00"),
+                           new vehicleInformation("MH34 GJ 0110", "Red", "12:56"),
+                           new vehicleInformation("MH46 JB 4154", "Purple", "2:24"),
+                           new vehicleInformation("MH12 DX 8331", "Black", "3:00"),
+                           new vehicleInformation("MH02 MJ 0619", "White-Red", "5:04"));
+           Assert.assertNotEquals(7, parkVehicle.get(vehicleType.SMALL).size());
+       }catch(ParkingLotException e) {
+           throw new ParkingLotException("Parking Full", ParkingLotException.ExceptionType.PARKING_IS_FULLED);
+       }
     }
 }
